@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  NODE_TLS_REJECT_UNAUTHORIZED=0
 };
