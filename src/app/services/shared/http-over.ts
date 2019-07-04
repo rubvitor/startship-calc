@@ -12,7 +12,7 @@ export class HttpOver {
 
     get(url, showLoading: boolean = true): Observable<any> {
 
-        let headers = new HttpHeaders();
+        const headers = new HttpHeaders();
 
         return this.http.get(url, {
             headers: headers
@@ -22,7 +22,7 @@ export class HttpOver {
     delete(url, showLoading: boolean = true): Observable<any> {
 
 
-        let headers = new HttpHeaders();
+        const headers = new HttpHeaders();
 
         return this.http.delete(url, {
             headers: headers
@@ -32,9 +32,10 @@ export class HttpOver {
     post(url: string, data?: any, options?: any, showLoading: boolean = true): Observable<any> {
 
 
-        let headers = new HttpHeaders();
-        if (options == null)
+        const headers = new HttpHeaders();
+        if (options == null) {
             options = {};
+        }
 
         options.headers = headers;
 
@@ -43,7 +44,7 @@ export class HttpOver {
 
     put(url: string, data: any, showLoading: boolean = true): Observable<any> {
 
-        let headers = new HttpHeaders();
+        const headers = new HttpHeaders();
 
         return this.http.put(url, data, {
             headers: headers
