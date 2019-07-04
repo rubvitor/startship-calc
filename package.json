@@ -16,7 +16,7 @@
     "schematics:build": "tsc -p projects/schematics/tsconfig.json",
     "schematics:copy": "npm run schematics:build && webpack",
     "compile": "npm run compile-lib && npm run schematics:copy",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
