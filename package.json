@@ -15,7 +15,8 @@
     "compile-lib": "ng build angular-bootstrap-md && npm run copy-scss && npm run copy-files && npm run pack-archive && npm run remove-archive",
     "schematics:build": "tsc -p projects/schematics/tsconfig.json",
     "schematics:copy": "npm run schematics:build && webpack",
-    "compile": "npm run compile-lib && npm run schematics:copy"
+    "compile": "npm run compile-lib && npm run schematics:copy",
+	"postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
