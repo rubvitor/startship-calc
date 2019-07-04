@@ -1,64 +1,7 @@
-
-<p align="center">
-  <a href="https://mdbootstrap.com/docs/angular/">
-    <img width="500" src="https://mdbootstrap.com/img/Marketing/general/logo/huge/mdb-angular.png">
-  </a>
-</p>
-
-<h1 align="center">Angular Bootstrap with Material Design</h1>
-
-<p align="center">
-  Built with <b>Angular 7, Bootstrap 4 and TypeScript</b>. CLI version available. Absolutely no jQuery.
-</p>
-<p align="center">
-  <b>400+</b> material UI elements, <b>600+</b> material icons, <b>74</b> CSS animations, TypeScript modules, SASS files and many more.
-</p>
-<p align="center">
-  All fully responsive. All compatible with different browsers.
-</p>
-
-<p align="center">
-  <a href="https://npmcharts.com/compare/angular-bootstrap-md?minimal=true"><img src="https://img.shields.io/npm/dm/angular-bootstrap-md.svg" alt="Downloads"></a>
-  <a href="https://github.com/mdbootstrap/Angular-Bootstrap-with-Material-Design/blob/master/license.pdf"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
-  <a href="https://badge.fury.io/js/angular-bootstrap-md"><img src="https://badge.fury.io/js/angular-bootstrap-md.svg" alt="npm"></a>
-  <a href="https://twitter.com/intent/tweet/?text=Thanks+@mdbootstrap+for+creating+amazing+and+free+Material+Design+for+Bootstrap+4+UI+KIT%20https://mdbootstrap.com/docs/angular/&hashtags=angular,code,webdesign,bootstrap"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
-</p>
-
-<p align="center">
-  <a href="https://mdbootstrap.com/docs/angular/" target="_blank">
-    <img width="700" src="https://mdbootstrap.com/img/Marketing/products/angular/mdb-free.jpg" alt="logo">
-  </a>
-</p>
-
-________
-
-
-# Table of Contents
-
-* [Other Technologies](#other-technologies)
-* [Demo](#demo)
-* [Version](#version)
-* [Quick start](#quick-start)
-* [Available commands](#available-commands)
-* [Modules list](#modules-list)
-* [How to install MDB via npm](#how-to-install-mdb-via-npm)
-* [Supported Browsers](#supported-browsers)
-* [Contributing](#contributing)
-* [Getting started](#getting-started)
-* [Additional tutorials](#additional-tutorials)
-* [PRO version](#pro-version)
-* [Documentation](#documentation)
-* [Highlights](#highlights)
-* [Useful Links](#useful-links)
-* [Social Media](#social-media)
-
-# Other Technologies
-
-[<img src="https://mdbootstrap.com/img/Marketing/general/logo/small/jquery.png"/>](https://mdbootstrap.com/docs/jquery/)[<img src="https://mdbootstrap.com/img/Marketing/general/logo/small/react.png"/>](https://mdbootstrap.com/docs/react/)[<img src="https://mdbootstrap.com/img/Marketing/general/logo/small/vue.png"/>](https://mdbootstrap.com/docs/vue/)
-
+<h1 align="center">Starship Calc</h1>
 # Demo
 
-[Main demo](https://mdbootstrap.com/docs/angular/components/demo/)
+[Main demo]()
 
 # Version
 
@@ -77,14 +20,6 @@ note "." at the end. It will clone files directly into current folder.
 - Voilà! Open browser and visit http://localhost:4200 
 
 Now you can navigate to [our documentation](https://mdbootstrap.com/docs/angular/), pick any component and place within your project.
-
-## Demo application
-
-Feel free to check our live example components: Just type `ng serve mdb-demo` in terminal!
-
-Type one of the below commands to remove demo application from this project:
-* npm `run remove-demo-unix` to remove demo application on UNIX based systems,
-* npm `run remove-demo-windows` to remove demo application on Windows systems.
 
 # Available commands
 
