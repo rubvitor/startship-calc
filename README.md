@@ -1,7 +1,7 @@
 <h1 align="center">Starship Calc</h1>
 # Demo
 
-[Main demo]()
+[Main demo](https://starshipcalc.firebaseapp.com/)
 
 # Version
 
