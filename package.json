@@ -15,8 +15,7 @@
     "compile-lib": "ng build angular-bootstrap-md && npm run copy-scss && npm run copy-files && npm run pack-archive && npm run remove-archive",
     "schematics:build": "tsc -p projects/schematics/tsconfig.json",
     "schematics:copy": "npm run schematics:build && webpack",
-    "compile": "npm run compile-lib && npm run schematics:copy",
-    "postinstall": "ng build --aot -prod"
+    "compile": "npm run compile-lib && npm run schematics:copy"
   },
   "private": true,
   "dependencies": {
@@ -75,7 +74,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "engines": {
-    "node": "6.11.0",
-    "npm": "3.10.10"
-  }
+   "node": "10.13.0",
+   "npm": "6.4.1"
+ }
 }
