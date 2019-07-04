@@ -47,7 +47,7 @@ export class StarshipCalcComponent implements OnInit {
             });
     }
 
-    calculate(event?: any, value?: number) {
+    calculate(event?: any) {
         if (!event || event.keyCode === 13) {
             this.getAll();
         }
