@@ -43,7 +43,7 @@ export class StarshipCalcComponent implements OnInit {
                 }
             },
             error => {
-                alert(error);
+                alert(error.message);
             });
     }
 

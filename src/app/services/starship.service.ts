@@ -12,6 +12,6 @@ export class StarshipService {
     }
 
     GetAll(): Observable<any>  {
-        return this.http.get(this.baseUrl + 'starships');
+        return this.http.get(this.baseUrl + 'starshipsd');
     }
 }
