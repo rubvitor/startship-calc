@@ -27,15 +27,13 @@ export class StarshipCalcComponent implements OnInit {
             (res) => {
                 this.starshipsList = res.results;
                 if (this.starshipsList && this.starshipsList.length > 0) {
-                    let starshipsCalcListTemp: StarshipCalc[] = [];
-                    let mgtlTemp = this.mglt;
-
-                    this.starshipsList.forEach(function (starship) {
-                        const stops = parseInt(String(mgtlTemp / starship.MGLT));
-                        starshipsCalcListTemp.push({ name: starship.name, stops: stops });
+                    
+                    this.starshipsList.forEach((starship) => {
+                        const stops = calculateStops(starship.MGLT, starship.consumables);
+                        this.starshipsCalcList.push({ name: starship.name, stops: stops });
                     });
 
-                    this.starshipsCalcList = starshipsCalcListTemp.sort(function (a, b) {
+                    this.starshipsCalcList = this.starshipsCalcList.sort(a, b) {
                         if (a.name > b.name) {
                             return 1;
                         }
@@ -53,5 +51,35 @@ export class StarshipCalcComponent implements OnInit {
 
     calculate() {
         this.getAll();
+    }
+
+    calculateStops(mgltStar, consumables) : number {
+        const consumableSplit: string[] = consumables.split(' ');
+        const period: string = consumableSplit[1];
+        const numPeriod: string = consumableSpli[0];
+        const hoursCalc: number;
+        const stops: number = 0;
+
+        switch (period) {
+            case 'year':
+            case 'years':
+                hoursCalc = parseInt(numPeriod) * 365 * 24;
+                break;
+            case 'month'
+            case 'mounths'
+                hoursCalc = parseInt(numPeriod) * 30 * 24;
+                break;
+            case 'day'
+            case 'days'
+                hoursCalc = parseInt(numPeriod) * 24;
+                break;
+            case 'hour'
+            case 'hours'
+                hoursCalc = parseInt(numPeriod);
+                break;
+        }
+
+        stops = (this.mglt / mgltStar) / hoursCalc;
+        return stops;
     }
 }
