@@ -57,7 +57,7 @@ export class StarshipCalcComponent implements OnInit {
         const consumableSplit: string[] = consumables.split(' ');
         const period: string = consumableSplit[1];
         const numPeriod: string = consumableSpli[0];
-        const hoursCalc: number;
+        const hoursCalc: number = 0;
         const stops: number = 0;
 
         switch (period) {
