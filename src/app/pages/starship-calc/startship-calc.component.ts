@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StarshipService } from 'src/app/services/starship.service';
 import { Starship } from 'src/app/models/Startship';
 import { StarshipCalc } from 'src/app/models/StartshipCalc';
+import { debug } from 'util';
 
 @Component({
     selector: 'startship-calc-app',
@@ -27,9 +28,10 @@ export class StarshipCalcComponent implements OnInit {
             (res) => {
                 this.starshipsList = res.results;
                 if (this.starshipsList && this.starshipsList.length > 0) {
-
+                    this.starshipsCalcList = [];
                     this.starshipsList.forEach((starship) => {
                         const stops = this.calculateStops(starship.MGLT, starship.consumables);
+                        console.log(stops);
                         this.starshipsCalcList.push({ name: starship.name, stops: stops });
                     });
 
@@ -41,8 +43,10 @@ export class StarshipCalcComponent implements OnInit {
             });
     }
 
-    calculate() {
-        this.getAll();
+    calculate(event?) {
+        if (!event || (event.keyCode === 13 && event.shiftKey)) {
+            this.getAll();
+        }
     }
 
     columnStopAsc: boolean = false;
@@ -85,12 +89,14 @@ export class StarshipCalcComponent implements OnInit {
     }
 
     calculateStops(mgltStar, consumables): number {
-        debugger;
         const consumableSplit: string[] = consumables.split(' ');
         const period: string = consumableSplit[1];
         const numPeriod: string = consumableSplit[0];
         let hoursCalc: number = 0;
         let stops: number = 0;
+
+        if (this.mglt <= mgltStar)
+            return 0;
 
         switch (period) {
             case 'year':
@@ -98,8 +104,12 @@ export class StarshipCalcComponent implements OnInit {
                 hoursCalc = parseInt(numPeriod) * 365 * 24;
                 break;
             case 'month':
-            case 'mounths':
+            case 'months':
                 hoursCalc = parseInt(numPeriod) * 30 * 24;
+                break;
+            case 'week':
+            case 'weeks':
+                hoursCalc = parseInt(numPeriod) * 168;
                 break;
             case 'day':
             case 'days':
@@ -111,7 +121,11 @@ export class StarshipCalcComponent implements OnInit {
                 break;
         }
 
-        stops = (this.mglt / mgltStar) / hoursCalc;
+        const timeMgltHour = parseInt((this.mglt / mgltStar).toString());
+        if (hoursCalc >= timeMgltHour)
+            return 0;
+
+        stops = parseInt((timeMgltHour / hoursCalc).toString());
         return stops;
     }
 }
