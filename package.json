@@ -1,5 +1,5 @@
 {
-  "name": "Startship-Calc",
+  "name": "startship-calc",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -76,5 +76,17 @@
   "engines": {
     "node": "10.13.0",
     "npm": "6.4.1"
-  }
+  },
+  "description": "<h1 align=\"center\">Starship Calc</h1>\r # Demo",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubvitor/startship-calc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubvitor/startship-calc/issues"
+  },
+  "homepage": "https://github.com/rubvitor/startship-calc#readme"
 }
