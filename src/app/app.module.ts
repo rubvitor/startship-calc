@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { StarshipCalcComponent } from './pages/starship-calc/startship-calc.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoaderInterceptorService } from './services/shared/loader-interceptor.service';
 
 const appRoutes: Routes = [
@@ -22,6 +22,7 @@ const appRoutes: Routes = [
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         MDBBootstrapModule.forRoot(),
         RouterModule.forRoot(appRoutes),
         HttpClientModule

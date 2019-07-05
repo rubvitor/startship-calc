@@ -1,15 +1,27 @@
 <div class="flex-center flex-column">
     <h1 class="animated fadeIn mb-4">Starship Calc</h1>
 </div>
-<div class="flex-center flex-column">
-    <div class="form-group">
-        <label>Please enter the MGLT to Calc</label>
-        <input class="form-control" type="number" [(ngModel)]="mglt" (keyup)="calculate($event)" />
+<form [formGroup]="validationForm">
+    <div class="flex-center flex-column">
+        <div class="md-form">
+            <i class="fa fa-space-shuttle prefix"></i>
+            <input id="mgltInput" mdbInput mdbValidate formControlName="mgltCtrl" (keyup)="calculate($event)" min="1"
+                type="number" class="form-control">
+            <label for="mgltInput">Please enter the MGLT</label>
+            <mdb-error *ngIf="mgltCtrl.invalid && (mgltCtrl.dirty || mgltCtrl.touched)">
+                <div *ngIf="mgltCtrl.errors.min">
+                    MGLT less then 0
+                </div>
+                <div *ngIf="mgltCtrl.errors.required">
+                    MGLT required
+                </div>
+            </mdb-error>
+        </div>
     </div>
-</div>
-<div class="flex-center flex-column">
-    <button type="button" class="btn btn-primary" (click)="calculate()">Calculate</button>
-</div>
+    <div class="flex-center flex-column">
+        <button mdbBtn color="primary" mdbWavesEffect (click)="calculate()">Calculate</button>
+    </div>
+</form>
 <div *ngIf="starshipsCalcList && starshipsCalcList.length > 0" class="flex-center flex-column table-style">
     <div class="table-responsive">
         <table mdbTable hover="true" small="true" class="z-depth-1">

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
+
 import { StarshipService } from 'src/app/services/starship.service';
 import { Starship } from 'src/app/models/Startship';
 import { StarshipCalc } from 'src/app/models/StartshipCalc';
@@ -12,18 +14,26 @@ export class StarshipCalcComponent implements OnInit {
 
     starshipsList: Starship[];
     starshipsCalcList: StarshipCalc[];
-    mglt: number;
+
+    validationForm: FormGroup;
 
     columnStopAsc = false;
     columnNameAsc = false;
 
-    constructor(private starshipService: StarshipService) {
-
+    constructor(private starshipService: StarshipService,
+        private fb: FormBuilder) {
     }
 
     ngOnInit(): void {
         this.starshipsCalcList = [];
         this.starshipsList = [];
+
+        this.validationForm = this.fb.group({
+            mgltCtrl: new FormControl(null, [
+                Validators.required,
+                Validators.min(1)
+            ]),
+        });
     }
 
     getAll() {
@@ -50,7 +60,9 @@ export class StarshipCalcComponent implements OnInit {
 
     calculate(event?: any) {
         if (!event || event.keyCode === 13) {
-            this.getAll();
+            if (this.validationForm.valid) {
+                this.getAll();
+            }
         }
     }
 
@@ -129,5 +141,13 @@ export class StarshipCalcComponent implements OnInit {
 
         stops = parseInt((timeMgltHour / hoursCalc).toString());
         return stops;
+    }
+
+    get mglt(): number {
+        return Number(this.validationForm.get('mgltCtrl').value);
+    }
+
+    get mgltCtrl() {
+        return this.validationForm.get('mgltCtrl');
     }
 }
