@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="flex-center flex-column">
-        <button mdbBtn color="primary" mdbWavesEffect (click)="calculate()">Calculate</button>
+        <button mdbBtn color="primary" mdbWavesEffect (click)="calculate()" [disabled]="mgltCtrl.invalid">Calculate</button>
     </div>
 </form>
 <div *ngIf="starshipsCalcList && starshipsCalcList.length > 0" class="flex-center flex-column table-style">
