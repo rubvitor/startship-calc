@@ -1,4 +1,4 @@
 ﻿export interface StarshipCalc {
-	name: string,
-	stops: number
+	name: string;
+	stops: number;
 }

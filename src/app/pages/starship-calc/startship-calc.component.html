@@ -11,26 +11,30 @@
     <button type="button" class="btn btn-primary" (click)="calculate()">Calculate</button>
 </div>
 <div *ngIf="starshipsCalcList && starshipsCalcList.length > 0" class="flex-center flex-column table-style">
-    <table mdbTable hover="true" small="true">
-        <thead>
-            <tr>
-                <th (click)="sortBy('name')">
-                    Starship
-                </th>
-                <th (click)="sortBy('stops')">
-                    Stops
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr mdbTableCol *ngFor="let starshipCalc of starshipsCalcList">
-                <td>
-                    {{starshipCalc.name}}
-                </td>
-                <td>
-                    {{starshipCalc.stops}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table mdbTable hover="true" small="true" class="z-depth-1">
+            <thead>
+                <tr>
+                    <th scope="col" (click)="sortBy('name')">
+                        Starship
+                        <mdb-icon fas icon="sort"></mdb-icon>
+                    </th>
+                    <th scope="col" (click)="sortBy('stops')">
+                        Stops
+                        <mdb-icon fas icon="sort"></mdb-icon>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr mdbTableCol *ngFor="let starshipCalc of starshipsCalcList">
+                    <td>
+                        {{starshipCalc.name}}
+                    </td>
+                    <td>
+                        {{starshipCalc.stops}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

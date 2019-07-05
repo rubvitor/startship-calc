@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,8 +24,7 @@ const appRoutes: Routes = [
         FormsModule,
         MDBBootstrapModule.forRoot(),
         RouterModule.forRoot(appRoutes),
-        HttpClientModule,
-        HttpModule
+        HttpClientModule
     ],
     providers: [
         { provide: 'BASE_URL', useFactory: getBaseUrl },

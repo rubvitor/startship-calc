@@ -22,7 +22,8 @@ export class StarshipCalcComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
+        this.starshipsCalcList = [];
+        this.starshipsList = [];
     }
 
     getAll() {
