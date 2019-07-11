@@ -5,7 +5,7 @@
     <div class="flex-center flex-column">
         <div class="md-form">
             <i class="fa fa-space-shuttle prefix"></i>
-            <input id="mgltInput" mdbInput mdbValidate formControlName="mgltCtrl" (keyup)="calculate($event)" min="1"
+            <input id="mgltInput" style="color: #fff !important" mdbInput mdbValidate formControlName="mgltCtrl" (keyup)="calculate($event)" min="1"
                 type="number" class="form-control">
             <label for="mgltInput">Please enter the MGLT</label>
             <mdb-error *ngIf="mgltCtrl.invalid && (mgltCtrl.dirty || mgltCtrl.touched)">
